@@ -3,7 +3,7 @@
     <string name="app_name">Cannibal Open Touch</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Cannibal Open Touch</string>
-    <string name="welcome_text">Welcome to Cannibal Open Touch! Use the options below to configure Cannibal Open Touch. If you do not have the Cannibal Open Touch recovery installed, please download and install it from http://www.projectopencannibal.net!\n</string>
+    <string name="welcome_text">Welcome to Cannibal Open Touch! Use the options below to configure Cannibal Open Touch. If you do not have the Cannibal Open Touch recovery installed, please download and install it from http://www.projectopencannibal.org!\n</string>
     <string name="zip_verif_toggle_text">Toggle ZIP Verification</string>
     <string name="zip_nand_text">Toggle ZIP Flash Nandroid Prompt</string>
     <string name="ors_wipe_text">Toggle GooManager Wipe Prompt</string>

@@ -166,7 +166,7 @@ public class MainActivity extends Activity {
 		public void onClick(DialogInterface dialog, int which) {
 			switch (which) {
 			case DialogInterface.BUTTON_POSITIVE:
-				String[] commands = {"sed -i 's/ORSReboot = 0/ORSReboot = 1/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands = {"sed -i 's/ORSReboot = 0/ORSReboot = 1/' /sdcard/0/cotrecovery/settings.ini"};
 				RunAsRoot(commands);
 				Toast.makeText(MainActivity.this, "GooManager Forced Reboot enabled!", Toast.LENGTH_SHORT).show();
 				orsreboot_global = "1";
@@ -174,7 +174,7 @@ public class MainActivity extends Activity {
 				break;
 			
 			case DialogInterface.BUTTON_NEGATIVE:
-				String[] commands1 = {"sed -i 's/ORSReboot = 1/ORSReboot = 0/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands1 = {"sed -i 's/ORSReboot = 1/ORSReboot = 0/' /sdcard/0/cotrecovery/settings.ini"};
 				RunAsRoot(commands1);
 				Toast.makeText(MainActivity.this, "GooManager Forced Reboot disabled!", Toast.LENGTH_SHORT).show();
 				orsreboot_global = "0";
@@ -191,7 +191,7 @@ public class MainActivity extends Activity {
 		public void onClick(DialogInterface dialog, int which) {
 			switch (which) {
 			case DialogInterface.BUTTON_POSITIVE:
-				String[] commands = {"sed -i 's/ORSWipePrompt = 0/ORSWipePrompt = 1/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands = {"sed -i 's/ORSWipePrompt = 0/ORSWipePrompt = 1/' /sdcard/0/cotrecovery/settings.ini"};
 				RunAsRoot(commands);
 				Toast.makeText(MainActivity.this, "GooManager Wipe Prompt enabled!", Toast.LENGTH_SHORT).show();
 				orswipeprompt_global = "1";
@@ -199,7 +199,7 @@ public class MainActivity extends Activity {
 				break;
 			
 			case DialogInterface.BUTTON_NEGATIVE:
-				String[] commands1 = {"sed -i 's/ORSWipePrompt = 1/ORSWipePrompt = 0/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands1 = {"sed -i 's/ORSWipePrompt = 1/ORSWipePrompt = 0/' /sdcard/0/cotrecovery/settings.ini"};
 				RunAsRoot(commands1);
 				Toast.makeText(MainActivity.this, "GooManager Wipe Prompt disabled!", Toast.LENGTH_SHORT).show();
 				orswipeprompt_global = "0";
@@ -216,7 +216,7 @@ public class MainActivity extends Activity {
 		public void onClick(DialogInterface dialog, int which) {
 			switch (which) {
 			case DialogInterface.BUTTON_POSITIVE:
-				String[] commands = {"sed -i 's/BackupPrompt = 0/BackupPrompt = 1/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands = {"sed -i 's/BackupPrompt = 0/BackupPrompt = 1/' /sdcard/0/cotrecovery/settings.ini"};
 				RunAsRoot(commands);
 				Toast.makeText(MainActivity.this, "ZIP Flash Nandroid Prompt enabled!", Toast.LENGTH_SHORT).show();
 				backupprompt_global = "1";
@@ -224,7 +224,7 @@ public class MainActivity extends Activity {
 				break;
 			
 			case DialogInterface.BUTTON_NEGATIVE:
-				String[] commands1 = {"sed -i 's/BackupPrompt = 1/BackupPrompt = 0/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands1 = {"sed -i 's/BackupPrompt = 1/BackupPrompt = 0/' /sdcard/0/cotrecovery/settings.ini"};
 				RunAsRoot(commands1);
 				Toast.makeText(MainActivity.this, "ZIP Flash Nandroid Prompt disabled!", Toast.LENGTH_SHORT).show();
 				backupprompt_global = "0";
@@ -241,7 +241,7 @@ public class MainActivity extends Activity {
 		public void onClick(DialogInterface dialog, int which) {
 			switch (which) {
 			case DialogInterface.BUTTON_POSITIVE:
-				String[] commands = {"sed -i 's/SignatureCheckEnabled = 0/SignatureCheckEnabled = 1/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands = {"sed -i 's/SignatureCheckEnabled = 0/SignatureCheckEnabled = 1/' /sdcard/0/cotrecovery/settings.ini"};
 				sigcheck_global = "1";
 				ReallyUpdateLabel();
 				RunAsRoot(commands);
@@ -249,7 +249,7 @@ public class MainActivity extends Activity {
 				break;
 			
 			case DialogInterface.BUTTON_NEGATIVE:
-				String[] commands1 = {"sed -i 's/SignatureCheckEnabled = 1/SignatureCheckEnabled = 0/' /sdcard/cotrecovery/settings.ini"};
+				String[] commands1 = {"sed -i 's/SignatureCheckEnabled = 1/SignatureCheckEnabled = 0/' /sdcard/0/cotrecovery/settings.ini"};
 				sigcheck_global = "0";
 				ReallyUpdateLabel();
 				RunAsRoot(commands1);
@@ -333,7 +333,7 @@ public class MainActivity extends Activity {
         		while (fis.read(reader) != -1) {
 				}
         		nandloc_global = new String(reader);
-				t.setText("Backup Path: /sdcard/" + nandloc_global + "\n");
+				t.setText("Backup Path: /sdcard/0/" + nandloc_global + "\n");
         	} catch (IOException e) {
         		Log.e("COT", e.getMessage(), e);
         	} finally {
@@ -346,7 +346,7 @@ public class MainActivity extends Activity {
         	}
         } else {
         	nandloc_global = "cotrecovery";
-    		t.setText("Backup Path: /sdcard/" + nandloc_global + "\n");
+    		t.setText("Backup Path: /sdcard/0/" + nandloc_global + "\n");
         }
         t.append("GooManager Forced Reboots: " + orsreboot + "\n");
 		t.append("GooManager Partition Wipe Prompt: " + orswipeprompt + "\n");
@@ -358,7 +358,7 @@ public class MainActivity extends Activity {
     public void ReallyUpdateLabel() {
     	TextView t = new TextView(this);
 		t = (TextView)findViewById(R.id.textView2);
-		t.setText("Backup Path: " + "/sdcard/" + nandloc_global + "\n");
+		t.setText("Backup Path: " + "/sdcard/0/" + nandloc_global + "\n");
 		t.append("GooManager Forced Reboots: " + orsreboot_global + "\n");
 		t.append("GooManager Partition Wipe Prompt: " + orswipeprompt_global + "\n");
 		t.append("ZIP Flash Nandroid Prompt: " + backupprompt_global + "\n");
